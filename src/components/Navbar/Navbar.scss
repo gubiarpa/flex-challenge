@@ -53,6 +53,7 @@
 
 .nav-container__options__item {
 	cursor: pointer;
+	display: flex;
 	padding: 1rem 1.5rem;
 	font-size: inherit;
 	transition: background $time-transition-quick ease;
