@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AiOutlineDoubleLeft } from "react-icons/ai";
 import { GiFeatheredWing } from "react-icons/gi";
+import { MdDashboard, MdShoppingCart } from "react-icons/md";
 
 import "./Navbar.scss";
 
@@ -16,18 +17,33 @@ export const Navbar = () => {
 				<div>
 					<GiFeatheredWing />
 					{!collapsed && (
-						<span style={{ paddingLeft: "0.7rem" }}>App Name</span>
+						<span className={`nav-container__appname ${isCollapsed()}`}>
+							App Name
+						</span>
 					)}
 				</div>
 			</h1>
 			<nav className={"nav-container__subtitle"}>
 				<ul className={`nav-container__options`}>
-					<li>Opción 1</li>
-					<li>Opción 2</li>
+					<li className={"nav-container__options__item"}>
+						<MdDashboard />
+						<span className={"nav-container__options__item__title"}>
+							Dashboard
+						</span>
+					</li>
+					<li className={"nav-container__options__item"}>
+						<MdShoppingCart />
+						<span className={"nav-container__options__item__title"}>
+							Purchase
+						</span>
+					</li>
 				</ul>
-				<button onClick={() => toggleCollapsed()}>
+				<div
+					className={`nav-container__collapse`}
+					onClick={() => toggleCollapsed()}
+				>
 					<AiOutlineDoubleLeft />
-				</button>
+				</div>
 			</nav>
 		</aside>
 	);

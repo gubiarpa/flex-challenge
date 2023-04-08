@@ -2,8 +2,9 @@
 @import "../../assets/variables.scss";
 
 .nav-container {
-	transition: width 1s ease;
-	background-color: #333;
+	font-family: "Ropa Sans", sans-serif;
+	transition: width $time-transition ease;
+	background-color: $aside-color;
 	color: $primary-color;
 	height: 100vh;
 	width: 270px;
@@ -24,7 +25,15 @@
 	padding: 1.5rem;
 	font-family: "Ropa Sans", sans-serif;
 	border-bottom: $primary-color-border solid 1px;
-	display: flex;
+
+	.nav-container__appname {
+		padding-left: 0.7rem;
+		transition: all $time-transition-quick ease-in;
+
+		&.collapsed {
+			color: $aside-color;
+		}
+	}
 }
 
 .nav-container__subtitle {
@@ -33,19 +42,39 @@
 	flex-direction: column;
 	justify-content: space-between;
 	height: 100%;
-	padding-bottom: 1rem;
-}
-
-.nav-container__appname {
-	&.hidden {
-		display: none;
-	}
 }
 
 .nav-container__options {
 	display: flex;
 	flex-direction: column;
-	gap: 1.2rem;
 	list-style-type: none;
-	padding-top: 1.5rem;
+	padding-top: 1rem;
+}
+
+.nav-container__options__item {
+	cursor: pointer;
+	padding: 1rem 1.5rem;
+	font-size: inherit;
+	transition: background $time-transition-quick ease;
+	&:hover {
+		background-color: $aside-color-hover;
+	}
+}
+
+.nav-container__options__item__title {
+	margin-left: 1rem;
+}
+
+.nav-container__collapse {
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	border-top: $primary-color-border solid 1px;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+
+	&:hover {
+		background: #555;
+	}
 }
