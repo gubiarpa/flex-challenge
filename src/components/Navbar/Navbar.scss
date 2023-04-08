@@ -1,19 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Ropa+Sans&display=swap");
+@import "../../assets/variables.scss";
+
 .nav-container {
 	transition: width 1s ease;
 	background-color: #333;
 	height: 100vh;
 	width: 270px;
-	/* display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap; */
-}
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
 
-.nav-container.hidden {
-	width: 0;
-}
+	.hidden {
+		width: 0;
+	}
 
-@media screen and (max-width: 850px) {
-	.nav-container {
+	@media screen and (max-width: 850px) {
 		display: none;
 	}
+}
+
+.nav-container__title {
+	color: $primary-color;
+	padding: 1.5rem;
+	font-family: "Ropa Sans", sans-serif;
+	border-bottom: $primary-color-border solid 1px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+.nav-container__options {
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+	list-style-type: none;
+	padding-top: 1.5rem;
 }
