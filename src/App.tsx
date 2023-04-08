@@ -1,7 +1,7 @@
 import { Navbar } from "./components/Navbar/Navbar";
+import { Main } from "./components/Main/Main";
 
 import "./App.scss";
-import { Main } from "./components/Main/Main";
 
 function App() {
 	return (

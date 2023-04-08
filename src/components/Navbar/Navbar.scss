@@ -4,30 +4,42 @@
 .nav-container {
 	transition: width 1s ease;
 	background-color: #333;
+	color: $primary-color;
 	height: 100vh;
 	width: 270px;
 	display: flex;
 	flex-direction: column;
-	flex-wrap: nowrap;
 
-	.hidden {
-		width: 0;
+	&.collapsed {
+		width: 64px;
 	}
 
-	@media screen and (max-width: 850px) {
+	@media screen and (max-width: $min-width) {
 		display: none;
 	}
 }
 
 .nav-container__title {
-	color: $primary-color;
+	color: inherit;
 	padding: 1.5rem;
 	font-family: "Ropa Sans", sans-serif;
 	border-bottom: $primary-color-border solid 1px;
 	display: flex;
-	flex-direction: row;
+}
+
+.nav-container__subtitle {
+	color: inherit;
+	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
-	align-items: baseline;
+	height: 100%;
+	padding-bottom: 1rem;
+}
+
+.nav-container__appname {
+	&.hidden {
+		display: none;
+	}
 }
 
 .nav-container__options {
