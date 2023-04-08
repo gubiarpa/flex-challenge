@@ -51,7 +51,9 @@ export const Navbar = () => {
 					className={`nav-container__collapse`}
 					onClick={() => toggleCollapsed()}
 				>
-					{collapsed ? <AiOutlineDoubleRight /> : <AiOutlineDoubleLeft />}
+					<AiOutlineDoubleRight
+						className={`nav-container__collapse__icon ${isCollapsed()}`}
+					/>
 				</div>
 			</nav>
 		</aside>
