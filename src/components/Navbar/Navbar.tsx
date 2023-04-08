@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
 import { GiFeatheredWing } from "react-icons/gi";
-import { MdDashboard, MdShoppingCart } from "react-icons/md";
+import { MdDashboard, MdShoppingCart, MdLoop } from "react-icons/md";
 
 import "./Navbar.scss";
 
@@ -13,6 +13,7 @@ interface OptionItem {
 const optionsItems: OptionItem[] = [
 	{ label: "Dashboard", icon: <MdDashboard /> },
 	{ label: "Purchase", icon: <MdShoppingCart /> },
+	{ label: "Refresh", icon: <MdLoop /> },
 ];
 
 export const Navbar = () => {
