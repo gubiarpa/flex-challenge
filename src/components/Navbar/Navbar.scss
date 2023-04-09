@@ -6,6 +6,7 @@
 	transition: all $time-transition ease;
 	background-color: $aside-color;
 	color: $primary-color;
+	height: 100vh;
 	width: 270px;
 	display: flex;
 	flex-direction: column;
@@ -56,7 +57,7 @@
 	flex-wrap: nowrap;
 	padding: 1rem 1.5rem;
 	font-size: inherit;
-	transition: all $time-transition-quick ease;
+	transition: all $time-transition ease;
 
 	&:hover {
 		background-color: $aside-color-hover;
