@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
+import { AiOutlineDoubleLeft } from "react-icons/ai";
 import { GiFeatheredWing } from "react-icons/gi";
 import { MdDashboard, MdShoppingCart, MdLoop } from "react-icons/md";
 
@@ -25,34 +25,36 @@ export const Navbar = () => {
 	return (
 		<aside className={`nav-container ${isCollapsed()}`}>
 			<h1 className={"nav-container__title"}>
-				<div>
+				<span>
 					<GiFeatheredWing />
-					{!collapsed && (
-						<span className={`nav-container__appname ${isCollapsed()}`}>
-							App Name
-						</span>
-					)}
-				</div>
+				</span>
+				<span className={`nav-container__title__appname ${isCollapsed()}`}>
+					App Name
+				</span>
 			</h1>
 			<nav className={"nav-container__subtitle"}>
-				<ul className={`nav-container__options`}>
+				<ul className={`nav-container__subtitle__options`}>
 					{optionsItems.map(({ label, icon }) => (
-						<li title={label} className={"nav-container__options__item"}>
+						<li
+							key={label}
+							title={label}
+							className={"nav-container__subtitle__options__item"}
+						>
 							<span>{icon}</span>
-							{!collapsed && (
-								<span className={"nav-container__options__item__title"}>
-									{label}
-								</span>
-							)}
+							<span
+								className={`nav-container__subtitle__options__item__label ${isCollapsed()}`}
+							>
+								{label}
+							</span>
 						</li>
 					))}
 				</ul>
 				<div
-					className={`nav-container__collapse`}
+					className={`nav-container__subtitle__collapse`}
 					onClick={() => toggleCollapsed()}
 				>
-					<AiOutlineDoubleRight
-						className={`nav-container__collapse__icon ${isCollapsed()}`}
+					<AiOutlineDoubleLeft
+						className={`nav-container__subtitle__collapse__icon ${isCollapsed()}`}
 					/>
 				</div>
 			</nav>
