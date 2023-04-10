@@ -10,6 +10,11 @@ interface OptionItem {
 	icon: React.ReactNode;
 }
 
+interface ParentOptionItem {
+	label: string;
+	children: OptionItem[];
+}
+
 const optionsItems: OptionItem[] = [
 	{ label: "Dashboard", icon: <MdDashboard /> },
 	{ label: "Purchase", icon: <MdShoppingCart /> },

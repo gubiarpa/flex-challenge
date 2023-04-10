@@ -3,16 +3,18 @@
 
 .nav-container {
 	font-family: "Ropa Sans", sans-serif;
-	transition: all $time-transition ease;
+	transition: width $time-transition ease;
 	background-color: $aside-color;
 	color: $primary-color;
 	height: 100vh;
-	width: 270px;
+	width: $menu-expanded-width;
 	display: flex;
 	flex-direction: column;
+	position: sticky;
+	top: 0;
 
 	&.collapsed {
-		width: 64px;
+		width: $menu-collapsed-width;
 	}
 
 	@media screen and (max-width: $min-width-desktop) {

@@ -1,4 +1,6 @@
-$min-width-desktop: 850px;
+$min-width-desktop: 768px; // Tablet
+$menu-collapsed-width: 65px;
+$menu-expanded-width: 300px;
 
 $time-transition: 0.7s;
 $time-transition-quick: calc($time-transition / 2);
