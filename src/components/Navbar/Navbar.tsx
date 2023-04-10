@@ -4,6 +4,7 @@ import { GiFeatheredWing } from "react-icons/gi";
 import { MdDashboard, MdShoppingCart, MdLoop } from "react-icons/md";
 
 import "./Navbar.scss";
+import { NavbarOption } from "./NavbarOption";
 
 interface OptionItem {
 	label: string;
@@ -39,19 +40,13 @@ export const Navbar = () => {
 			</h1>
 			<nav className={"nav-container__subtitle"}>
 				<ul className={`nav-container__subtitle__options`}>
-					{optionsItems.map(({ label, icon }) => (
-						<li
-							key={label}
-							title={label}
-							className={"nav-container__subtitle__options__item"}
-						>
-							<span>{icon}</span>
-							<span
-								className={`nav-container__subtitle__options__item__label ${isCollapsed()}`}
-							>
-								{label}
-							</span>
-						</li>
+					{optionsItems.map(({ label, icon }, index) => (
+						<NavbarOption
+							key={index}
+							icon={icon}
+							label={label}
+							collapsedClass={isCollapsed()}
+						/>
 					))}
 				</ul>
 				<div
